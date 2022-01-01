@@ -35,7 +35,7 @@ img {
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .text-not-found {
@@ -115,28 +115,32 @@ button.back-homepage {
   line-height: 17px;
   text-align: center;
   position: absolute;
-  left: 46px;
-  top: 908px;
+  /* left: 12.267vw; */
+  left: 50%;
+  top: 95.6797vh;
+  /* top: 908px; */
+  transform: translate(-50%, 0);
   color: #bdbdbd;
   padding-bottom: 24px;
+  white-space: nowrap;
 }
 
-@media only screen and (min-width: 1080px) {
+@media only screen and (min-width: 900px) {
   .text-not-found {
-    top: 40px;
-    left: 77px;
+    top: 2.778vw;
+    left: 5.347vw;
   }
 
   .scarecrow {
-    width: 539.22px;
-    height: 447.43px;
+    width: 37.44583vw;
+    height: 31.071527vw;
   }
 
   .main-container {
-    margin-top: 265px;
-    margin-left: 77px;
-    margin-right: 119px;
-    gap: 118.78px;
+    margin-top: 24.5370vh;
+    margin-left: 5.347vw;
+    margin-right: 8.264vw;
+    gap: 8.249vw;
     display: flex;
     align-items: normal;
     flex-direction: row;
@@ -158,20 +162,19 @@ button.back-homepage {
     flex-direction: column;
     margin-left: 0;
     text-align: left;
-    max-width: 586px;
+    max-width: 40.694vw;
   }
 
   .text-message {
-    margin-top: 36px;
-    width: 381px;
+    margin-top: 2.500vw;
+    width: 26.458vw;
   }
 
   button.back-homepage {
-    margin-top: 64px;
+    margin-top: 4.444vw;
   }
 
   .text-created-by {
-    left: 577px;
-    top: 1039px;
+    top: 96.2037vh;
   }
 }
