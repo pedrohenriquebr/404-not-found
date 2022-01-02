@@ -17,7 +17,7 @@ body.dark-theme {
 }
 
 body.dark-theme
-  :is(.right-container, .text-not-found, .text-created-by) {
+  :is(.right-container, .text-not-found) {
   filter: invert(100%);
 }
 
@@ -291,8 +291,7 @@ body * {
   }
 
   .right-container,
-  .text-not-found,
-  .text-created-by {
+  .text-not-found{
     filter: invert(100%);
   }
 
@@ -318,7 +317,7 @@ body * {
     --drop-shadow-color: black;
   }
 
-  body.light-theme :is(.right-container, .text-not-found, .text-created-by) {
+  body.light-theme :is(.right-container, .text-not-found) {
     filter: none;
   }
 
