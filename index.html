@@ -9,7 +9,8 @@
     <link href="http://fonts.cdnfonts.com/css/inconsolata-2" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Space Mono' rel='stylesheet'>
     <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
-                
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
@@ -31,6 +32,37 @@
     <span class="text-created-by">
         created by Pedro Braga - devChallenges.io
     </span>
-</body>
 
+    <button class="toggle-btn">
+        <i class="material-icons">brightness_medium</i>
+    </button>
+</body>
+<script>
+    const btn = document.querySelector(".toggle-btn");
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme == "dark") {
+        document.body.classList.toggle("dark-theme");
+    } else if (currentTheme == "light") {
+        document.body.classList.toggle("light-theme");
+    }
+
+    btn.addEventListener("click", function () {
+
+        btn.classList.toggle("rotate");
+        if (prefersDarkScheme.matches) {
+            document.body.classList.toggle("light-theme");
+            var theme = document.body.classList.contains("light-theme")
+                ? "light"
+                : "dark";
+        } else {
+            document.body.classList.toggle("dark-theme");
+            var theme = document.body.classList.contains("dark-theme")
+                ? "dark"
+                : "light";
+        }
+        localStorage.setItem("theme", theme);
+    });
+</script>
 </html>
