@@ -23,7 +23,7 @@ body.dark-theme
 
 
 body.dark-theme :is(.scarecrow) {
-  filter: drop-shadow(2px 4px 6px var(--drop-shadow-scarecrow-color));
+  filter: invert(100%) drop-shadow(2px 4px 6px var(--drop-shadow-scarecrow-color));
 }
 
 body.dark-theme :is(.toggle-btn) {
