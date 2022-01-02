@@ -1,3 +1,9 @@
+:root {
+  --toggle-btn-size: 3.5rem;
+  --toggle-btn-padding: 5px;
+}
+
+
 body {
   --bkg-color: white;
   --drop-shadow-color: black;
@@ -27,7 +33,7 @@ body.dark-theme :is(.scarecrow) {
 }
 
 body.dark-theme :is(.toggle-btn) {
-  filter: drop-shadow(0 0 0.75rem var(--filter-drop-shadow-color))
+  filter: invert(100%) drop-shadow(0 0 0.75rem var(--filter-drop-shadow-color))
 }
 
 
@@ -180,14 +186,16 @@ button.back-homepage {
 
 .toggle-btn {
   position: fixed;
-  right: 10%;
-  bottom: 5%;
+  left: 80vw;
+  top: 8vh;
   z-index: 1;
-  padding: 5px;
+  width: var(--toggle-btn-size);
+  height: var(--toggle-btn-size);
+  padding: var(--toggle-btn-padding);
   border-radius: 50px;
-  background-color: black;
-  border: 1px solid white;
-  color: white;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
   cursor: pointer;
   display: grid;
   place-items: center;
