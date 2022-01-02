@@ -47,7 +47,6 @@ body {
 .text-not-found {
   margin-top: 20px;
   margin-left: 24px;
-  /* position: absolute; */
   font-size: 24px;
   font-weight: bold;
   line-height: 25px;
@@ -81,7 +80,6 @@ body {
 .right-container {
   display: flex;
   flex-direction: column;
-  /* margin: 0 auto; */
   margin-left: 18px;
   text-align: left;
   max-width: 350px;
@@ -100,6 +98,7 @@ body {
 }
 
 button.back-homepage {
+  cursor: pointer;
   border: none;
   margin-top: 66px;
   padding: 24px 43px;
@@ -170,10 +169,15 @@ button.back-homepage {
   .text-message {
     margin-top: 3.3333vh;;
     width: 26.458vw;
+    font-size: 2.2222vh;
+    line-height: 3.333vh;
   }
 
   button.back-homepage {
     margin-top: 5.92592vh;
+    font-size: 1.2962vh;
+    line-height: 1.94444vh;
+    padding: 2.222vh 3.981481vh;
   }
 
   .text-created-by {
