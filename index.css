@@ -1,10 +1,10 @@
 body {
   --bkg-color: white;
-  --drop-shadow-scarecrow-color: black;
-  --filter-drop-shadow-color: #f2695c;
+  --drop-shadow-color: black;
+  --filter-drop-shadow-color: #ff6d5b;
 }
 
-.right-container,
+.right-container:not(.text-bad-news),
 .text-not-found,
 .text-created-by {
   filter: none;
@@ -12,8 +12,8 @@ body {
 
 body.dark-theme {
   --bkg-color: black;
-  --drop-shadow-scarecrow-color: white;
-  --filter-drop-shadow-color: #5f588c;
+  --drop-shadow-color: white;
+  --filter-drop-shadow-color: #002da4;
 }
 
 body.dark-theme
@@ -23,11 +23,16 @@ body.dark-theme
 
 
 body.dark-theme :is(.scarecrow) {
-  filter: drop-shadow(2px 4px 6px var(--drop-shadow-scarecrow-color));
+  filter: invert(100%) drop-shadow(2px 4px 6px var(--drop-shadow-color));
 }
 
 body.dark-theme :is(.toggle-btn) {
   filter: drop-shadow(0 0 0.75rem var(--filter-drop-shadow-color))
+}
+
+
+body.dark-theme :is(.text-bad-news) {
+  filter: drop-shadow(2px 2px 6px black)
 }
 
 
@@ -37,7 +42,11 @@ body.dark-theme :is(.toggle-btn) {
 }
 
 .scarecrow {
-  filter: drop-shadow(2px 4px 6px var(--drop-shadow-scarecrow-color));
+  filter: drop-shadow(2px 4px 6px var(--drop-shadow-color));
+}
+
+.text-bad-news {
+  filter: drop-shadow(4px 6px 0.1rem rgba(0,0,0,0.5))
 }
 
 html {
@@ -277,8 +286,8 @@ body * {
 @media (prefers-color-scheme: dark) {
   body {
     --bkg-color: black;
-    --filter-drop-shadow-color: #5f588c;
-    --drop-shadow-scarecrow-color: white;
+    --filter-drop-shadow-color: #002da4;
+    --drop-shadow-color: white;
   }
 
   .right-container,
@@ -289,7 +298,7 @@ body * {
 
   .scarecrow {
     filter: invert(100%)
-      drop-shadow(2px 4px 6px var(--drop-shadow-scarecrow-color));
+      drop-shadow(2px 4px 6px var(--drop-shadow-color));
   }
 
   .toggle-btn {
@@ -297,10 +306,16 @@ body * {
       drop-shadow(0 0 0.75rem var(--filter-drop-shadow-color));
   }
 
+
+    
+  .text-bad-news {
+    filter: invert(100%) drop-shadow(2px 2px 6px white)
+  }
+
   body.light-theme {
     --bkg-color: white;
-    --filter-drop-shadow-color: #f2695c;
-    --drop-shadow-scarecrow-color: black;
+    --filter-drop-shadow-color: #ff6d5b;
+    --drop-shadow-color: black;
   }
 
   body.light-theme :is(.right-container, .text-not-found, .text-created-by) {
@@ -308,11 +323,16 @@ body * {
   }
 
   body.light-theme :is(.scarecrow) {
-    filter: drop-shadow(2px 4px 6px var(--drop-shadow-scarecrow-color));
+    filter: drop-shadow(2px 4px 6px var(--drop-shadow-color));
   }
 
   body.light-theme :is(.toggle-btn) {
     filter: drop-shadow(0 0 0.75rem var(--filter-drop-shadow-color));
+  }
+
+  
+  body.light-theme :is(.text-bad-news) {
+    filter: drop-shadow(4px 6px 0.1rem rgba(0,0,0,0.5))
   }
 
 }
